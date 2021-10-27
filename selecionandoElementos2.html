@@ -79,5 +79,37 @@
         <p>Cod3r Ensino</p>
     </footer>
     <script>
+        const comBorda = {
+            'border': 'solid 8px orange'
+        }
+        const semBorda = {
+            'border': 'none'
+        }
+        $(document.getElementsByTagName('li')).css(comBorda).css(semBorda)
+            // aplicando diretamente a todos os elementos 'li'
+        $('a[href="#link3"]').parent().css(comBorda).css(semBorda)
+            // aplicando ao pai do elemento específico
+        $('li:last').prev().css(comBorda).css(semBorda)
+            // seleciona o último elemento 'li' do documento e aplica ao 
+            // seu antecessor 'prev()'
+        $('a[href="#link3"]').parent().next().css(comBorda).css(semBorda)
+            // seleciona um elemento específico o pai(parent()), o próximonext() em
+            // relação ao pai e aplica 
+        $('a[href="#link1"]').parents().css(comBorda).css(semBorda)
+            // seleciona todos as tags de nível superior(parents()) e aplica
+        $('a[href="#link1"]').parentsUntil('body').css(comBorda).css(semBorda)
+            // seleciona todos as tags de nível superior até encontrar a tag 
+            // informada na função parentsUntil('tagName')
+        $('main').children().css(comBorda).css(semBorda)
+            // seleciona todos os filhos da tag 'main'
+        $('body').find('a').css(comBorda).css(semBorda)
+            // seleciona todas as tags 'a' dentro do body e aplica
+        $('main').children().each((i, e) => $(e).css(comBorda).css(semBorda))
+            // each() é uma função de iteração que recebe um indice e um elemento
+            //de uma lista e precisa que o elemento esteja envolvido pelo jQuery
+            //no monmento de aplicar as funções
+        const elemDom = document.getElementsByClassName('menu')
+        $(elemDom).css(comBorda).css(semBorda)
+        $('li').each((i, e) => $(e).css(comBorda).css(semBorda))
     </script>
 </body>
